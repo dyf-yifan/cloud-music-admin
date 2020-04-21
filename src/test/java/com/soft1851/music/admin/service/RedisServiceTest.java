@@ -13,7 +13,13 @@ class RedisServiceTest {
     private RedisService redisService;
 
     @Test
-    void testRedis() {
-        redisService.save("hehe","123",1000L);
+    void testSet() {
+        //redis配置中设置的过期时间单位是分钟
+        redisService.set("test", "123", 1L);
+    }
+
+    @Test
+    void testExistsKey() {
+        System.out.println(redisService.existsKey("test"));
     }
 }

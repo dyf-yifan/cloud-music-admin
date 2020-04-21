@@ -9,7 +9,7 @@ import javax.annotation.Resource;
 
 /**
  * @ClassName WebConfig
- * @Description TODO
+ * @Description 注册拦截器等Web配置
  * @Author mq_xu
  * @Date 2020/4/15
  * @Version 1.0
@@ -18,13 +18,14 @@ import javax.annotation.Resource;
 public class WebConfig implements WebMvcConfigurer {
     @Resource
     private LoginInterceptor loginInterceptor;
+
     /**
      * 添加拦截器配置
      */
     @Override
     public void addInterceptors(InterceptorRegistry registry) {
         //拦截路径可自行配置多个 可用 ，分隔开
-        registry.addInterceptor(loginInterceptor).addPathPatterns("/**").excludePathPatterns("/login").excludePathPatterns("/static/**");
+        registry.addInterceptor(loginInterceptor).addPathPatterns("/**").excludePathPatterns("/login", "/captcha").excludePathPatterns("/static/**");
     }
 }
 

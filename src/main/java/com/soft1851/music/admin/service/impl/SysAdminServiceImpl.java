@@ -1,8 +1,10 @@
 package com.soft1851.music.admin.service.impl;
 
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
+import com.soft1851.music.admin.common.ResultCode;
 import com.soft1851.music.admin.dto.LoginDto;
 import com.soft1851.music.admin.entity.SysAdmin;
+import com.soft1851.music.admin.exception.CustomException;
 import com.soft1851.music.admin.mapper.SysAdminMapper;
 import com.soft1851.music.admin.service.SysAdminService;
 import com.soft1851.music.admin.util.Md5Util;
@@ -37,13 +39,11 @@ public class SysAdminServiceImpl extends ServiceImpl<SysAdminMapper, SysAdmin> i
                 return true;
             } else {
                 log.error("密码错误");
-                return false;
-//                throw new CustomException("密码错误", ResultCode.USER_PASSWORD_ERROR);
+                throw new CustomException("密码错误", ResultCode.USER_PASSWORD_ERROR);
             }
         } else {
             log.error("用户名不存在");
-            return false;
-//            throw new CustomException("用户名不存在", ResultCode.USER_NOT_FOUND);
+            throw new CustomException("用户名不存在", ResultCode.USER_NOT_FOUND);
         }
     }
 

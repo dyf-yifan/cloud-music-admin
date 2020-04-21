@@ -11,7 +11,7 @@ import java.util.Date;
 
 /**
  * @ClassName JwtTokenUtil
- * @Description TODO
+ * @Description JWT加密解密工具类
  * @Author mq_xu
  * @Date 2020/4/15
  * @Version 1.0
@@ -39,7 +39,6 @@ public class JwtTokenUtil {
         } catch (UnsupportedEncodingException e) {
             log.error("不支持的编码格式");
         }
-
         return token;
     }
 

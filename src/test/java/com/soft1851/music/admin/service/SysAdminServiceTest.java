@@ -15,7 +15,7 @@ class SysAdminServiceTest {
 
     @Test
     void login() {
-        LoginDto loginDto = LoginDto.builder().name("taoranrn").password("12346").build();
+        LoginDto loginDto = LoginDto.builder().name("taoranran").password("123456").build();
         assertTrue(sysAdminService.login(loginDto));
     }
 
