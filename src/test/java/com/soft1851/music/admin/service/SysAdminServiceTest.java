@@ -15,12 +15,12 @@ class SysAdminServiceTest {
 
     @Test
     void login() {
-        LoginDto loginDto = LoginDto.builder().name("taoranran").password("123456").build();
+        LoginDto loginDto = LoginDto.builder().name("mqxu").password("123456").build();
         assertTrue(sysAdminService.login(loginDto));
     }
 
     @Test
-    void getAdmin() {
-//        System.out.println(sysAdminService.getAdmin("taoranran"));
+    void selectByName() {
+        System.out.println(sysAdminService.getAdminAndRolesByName("mqxu"));
     }
 }

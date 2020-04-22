@@ -1,11 +1,13 @@
 package com.soft1851.music.admin.service.impl;
 
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
+import com.soft1851.music.admin.common.ResultCode;
 import com.soft1851.music.admin.dto.LoginDto;
 import com.soft1851.music.admin.entity.SysAdmin;
+import com.soft1851.music.admin.exception.CustomException;
 import com.soft1851.music.admin.mapper.SysAdminMapper;
-import com.soft1851.music.admin.mapper.SysRoleMapper;
 import com.soft1851.music.admin.service.SysAdminService;
+import com.soft1851.music.admin.util.Md5Util;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 
@@ -25,43 +27,29 @@ public class SysAdminServiceImpl extends ServiceImpl<SysAdminMapper, SysAdmin> i
 
     @Resource
     private SysAdminMapper sysAdminMapper;
-    @Resource
-    private SysRoleMapper sysRoleMapper;
 
     @Override
     public boolean login(LoginDto loginDto) {
-//        SysAdmin admin1 = getAdmin(loginDto.getName());
-//        if (admin1 != null) {
-//            String pass = Md5Util.getMd5(loginDto.getPassword(), true, 32);
-//            if (admin1.getPassword().equals(pass)) {
-//                return true;
-//            } else {
-//                log.error("密码错误");
-//                throw new CustomException("密码错误", ResultCode.USER_PASSWORD_ERROR);
-//            }
-//        } else {
-//            log.error("用户名不存在");
-//            throw new CustomException("用户名不存在", ResultCode.USER_NOT_FOUND);
-//        }
-        return true;
+        SysAdmin admin1 = sysAdminMapper.getSysAdminByName(loginDto.getName());
+        if (admin1 != null) {
+            String pass = Md5Util.getMd5(loginDto.getPassword(), true, 32);
+            if (admin1.getPassword().equals(pass)) {
+                return true;
+            } else {
+                log.error("密码错误");
+                throw new CustomException("密码错误", ResultCode.USER_PASSWORD_ERROR);
+            }
+        } else {
+            log.error("用户名不存在");
+            throw new CustomException("用户名不存在", ResultCode.USER_NOT_FOUND);
+        }
     }
 
-//    @Override
-//    public SysAdmin getAdmin(String name) {
-//        Map<String, Object> params = new HashMap<>(8);
-//        params.put("name", name);
-//        List<SysAdmin> admins = sysAdminMapper.selectByMap(params);
-//        if (admins.size() > 0) {
-//            return sysAdminMapper.selectByMap(params).get(0);
-//        } else {
-//            return null;
-//        }
-//    }
-//
-//    @Override
-//    public List<SysRole> getRolesByAdminId(String adminId) {
-//        QueryWrapper<SysRole> queryWrapper = new QueryWrapper<>();
-//        queryWrapper.ge("admin_id", adminId);
-//        return null;
-//    }
+    @Override
+    public SysAdmin getAdminAndRolesByName(String name) {
+        return sysAdminMapper.selectByName(name);
+    }
+
+
+
 }

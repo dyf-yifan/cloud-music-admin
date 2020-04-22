@@ -10,4 +10,6 @@
     <select id="selectByName" resultMap="map">
         SELECT * FROM sys_admin
     </select>
+    
+    <select id="getSysAdminByName"
 </mapper>

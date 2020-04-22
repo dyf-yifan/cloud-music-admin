@@ -37,10 +37,10 @@ public class SysRoleServiceImpl extends ServiceImpl<SysRoleMapper, SysRole> impl
         List<SysMenu> menus = sysRole.getMenus();
         for (SysMenu menu : menus) {
             if (menu.getParentId() == 0) {
-                TreeNode treeNode = new TreeNode(menu.getId(), 0, menu.getTitle(), menu.getIcon(), menu.getPath(), menu.getSort());
+                TreeNode treeNode = new TreeNode(menu.getId(), 0, menu.getType(), menu.getTitle(), menu.getIcon(), menu.getPath(), menu.getSort());
                 list.add(treeNode);
             } else {
-                TreeNode treeNode = new TreeNode(menu.getId(), menu.getParentId(), menu.getTitle(), menu.getIcon(), menu.getPath(), menu.getSort());
+                TreeNode treeNode = new TreeNode(menu.getId(), menu.getParentId(), menu.getType(), menu.getTitle(), menu.getIcon(), menu.getPath(), menu.getSort());
                 list.add(treeNode);
             }
         }

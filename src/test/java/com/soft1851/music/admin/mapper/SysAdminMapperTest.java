@@ -26,4 +26,9 @@ class SysAdminMapperTest {
             System.out.println(role.getRoleId() + ":" + role.getRoleName());
         }
     }
+
+    @Test
+    void getAdminByName() {
+        System.out.println(sysAdminMapper.getSysAdminByName("mqxu"));
+    }
 }

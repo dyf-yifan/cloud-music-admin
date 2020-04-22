@@ -6,7 +6,7 @@ import com.soft1851.music.admin.entity.SysAdmin;
 
 /**
  * <p>
- *  服务类
+ * 服务类
  * </p>
  *
  * @author mq_xu
@@ -21,19 +21,12 @@ public interface SysAdminService extends IService<SysAdmin> {
      */
     boolean login(LoginDto loginDto);
 
-//    /**
-//     * 根据name查询Admin信息
-//     * @param name
-//     * @return
-//     */
-//    Map getAdmin(String name);
 
-
-//    /**
-//     * 根据管理员id查找其所有角色
-//     * @param adminId
-//     * @return
-//     */
-//    List<SysRole> getRolesByAdminId(String adminId);
-
+    /**
+     * 根据name查询Admin信息，包含其所有角色
+     *
+     * @param name
+     * @return
+     */
+    SysAdmin getAdminAndRolesByName(String name);
 }
