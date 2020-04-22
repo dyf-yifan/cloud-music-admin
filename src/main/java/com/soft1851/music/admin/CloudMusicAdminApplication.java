@@ -9,9 +9,8 @@ import org.springframework.boot.web.servlet.ServletComponentScan;
  * @author taoranran
  */
 @SpringBootApplication
-//注册过滤器注解
-@ServletComponentScan
 @MapperScan("com.soft1851.music.admin.mapper")
+@ServletComponentScan
 public class CloudMusicAdminApplication {
 
     public static void main(String[] args) {

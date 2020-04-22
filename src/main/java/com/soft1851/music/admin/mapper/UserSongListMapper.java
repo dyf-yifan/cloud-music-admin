@@ -9,7 +9,7 @@ import com.baomidou.mybatisplus.core.mapper.BaseMapper;
  * </p>
  *
  * @author mq_xu
- * @since 2020-04-21
+ * @since 2020-04-22
  */
 public interface UserSongListMapper extends BaseMapper<UserSongList> {
 

@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RestController;
  * </p>
  *
  * @author mq_xu
- * @since 2020-04-21
+ * @since 2020-04-22
  */
 @RestController
 @RequestMapping("/typeSongList")

@@ -6,11 +6,11 @@ import com.soft1851.music.admin.entity.SysAdmin;
 
 /**
  * <p>
- * 服务类
+ *  服务类
  * </p>
  *
  * @author mq_xu
- * @since 2020-04-21
+ * @since 2020-04-22
  */
 public interface SysAdminService extends IService<SysAdmin> {
     /**
@@ -21,10 +21,19 @@ public interface SysAdminService extends IService<SysAdmin> {
      */
     boolean login(LoginDto loginDto);
 
-    /**
-     * 根据name查询Admin
-     * @param name
-     * @return
-     */
-    SysAdmin getAdmin(String name);
+//    /**
+//     * 根据name查询Admin信息
+//     * @param name
+//     * @return
+//     */
+//    Map getAdmin(String name);
+
+
+//    /**
+//     * 根据管理员id查找其所有角色
+//     * @param adminId
+//     * @return
+//     */
+//    List<SysRole> getRolesByAdminId(String adminId);
+
 }

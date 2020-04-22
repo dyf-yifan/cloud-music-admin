@@ -23,7 +23,7 @@ public class CaptchaConfig {
         properties.setProperty("kaptcha.textproducer.char.length", "4");
         properties.setProperty("kaptcha.border", "yes");
         properties.setProperty("kaptcha.border.color", "105,180,90");
-        properties.setProperty("kaptcha.textproducer.font.color", "green");
+        properties.setProperty("kaptcha.textproducer.font.color", "red");
         properties.setProperty("kaptcha.textproducer.font.size", "30");
         properties.setProperty("kaptcha.textproducer.font.names", "微软雅黑,楷体,宋体");
         properties.setProperty("kaptcha.image.width", "120");

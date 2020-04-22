@@ -21,6 +21,6 @@ class SysAdminServiceTest {
 
     @Test
     void getAdmin() {
-        System.out.println(sysAdminService.getAdmin("taoranran"));
+//        System.out.println(sysAdminService.getAdmin("taoranran"));
     }
 }

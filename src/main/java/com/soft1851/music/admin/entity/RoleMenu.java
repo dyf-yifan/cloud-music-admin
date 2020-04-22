@@ -16,7 +16,7 @@ import lombok.experimental.Accessors;
  * </p>
  *
  * @author mq_xu
- * @since 2020-04-21
+ * @since 2020-04-22
  */
 @Data
 @EqualsAndHashCode(callSuper = false)
@@ -43,12 +43,6 @@ public class RoleMenu extends Model<RoleMenu> {
      */
     @TableField("menu_id")
     private Integer menuId;
-
-    /**
-     * 角色对资源的细粒度按钮权限
-     */
-    @TableField("permissions")
-    private String permissions;
 
 
     @Override
