@@ -2,7 +2,7 @@ package com.soft1851.music.admin.controller;
 
 
 import com.soft1851.music.admin.service.SysRoleService;
-import org.springframework.data.repository.query.Param;
+import org.apache.ibatis.annotations.Param;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;

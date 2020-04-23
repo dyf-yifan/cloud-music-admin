@@ -49,7 +49,4 @@ public class SysAdminServiceImpl extends ServiceImpl<SysAdminMapper, SysAdmin> i
     public SysAdmin getAdminAndRolesByName(String name) {
         return sysAdminMapper.selectByName(name);
     }
-
-
-
 }
