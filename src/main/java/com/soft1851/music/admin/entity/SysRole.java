@@ -6,9 +6,7 @@ import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
 import com.baomidou.mybatisplus.extension.activerecord.Model;
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import lombok.Builder;
-import lombok.Data;
-import lombok.EqualsAndHashCode;
+import lombok.*;
 import lombok.experimental.Accessors;
 
 import java.io.Serializable;
@@ -24,6 +22,8 @@ import java.util.List;
  */
 @Data
 @Builder
+@NoArgsConstructor
+@AllArgsConstructor
 @EqualsAndHashCode(callSuper = false)
 @Accessors(chain = true)
 @TableName("sys_role")
@@ -31,8 +31,6 @@ public class SysRole extends Model<SysRole> {
 
     private static final long serialVersionUID = 1L;
 
-    @JsonIgnore
-    private List<SysMenu> menus;
 
     /**
      * 主键
@@ -52,6 +50,9 @@ public class SysRole extends Model<SysRole> {
     @JsonIgnore
     @TableField("description")
     private String description;
+
+    @JsonIgnore
+    private List<SysMenu> menus;
 
 
     @Override

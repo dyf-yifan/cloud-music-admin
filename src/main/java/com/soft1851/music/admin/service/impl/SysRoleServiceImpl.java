@@ -56,7 +56,13 @@ public class SysRoleServiceImpl extends ServiceImpl<SysRoleMapper, SysRole> impl
 
     @Override
     public boolean checkRole(List<SysRole> roles, int roleId) {
-
-        return false;
+        boolean flag = false;
+        for (SysRole role : roles) {
+            if (roleId == role.getRoleId()) {
+                flag = true;
+                break;
+            }
+        }
+        return flag;
     }
 }

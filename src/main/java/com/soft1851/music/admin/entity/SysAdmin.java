@@ -29,8 +29,6 @@ public class SysAdmin extends Model<SysAdmin> {
 
     private static final long serialVersionUID = 1L;
 
-    private List<SysRole> roles;
-
     /**
      * 主键
      */
@@ -84,12 +82,11 @@ public class SysAdmin extends Model<SysAdmin> {
     @TableField("status")
     private Integer status;
 
-
-
-
     @Override
     protected Serializable pkVal() {
         return this.id;
     }
+
+    private List<SysRole> roles;
 
 }
