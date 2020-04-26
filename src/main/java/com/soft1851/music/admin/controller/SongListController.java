@@ -1,13 +1,18 @@
 package com.soft1851.music.admin.controller;
 
 
+import com.soft1851.music.admin.entity.SongList;
+import com.soft1851.music.admin.service.SongListService;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
-
 import org.springframework.web.bind.annotation.RestController;
+
+import javax.annotation.Resource;
+import java.util.List;
 
 /**
  * <p>
- *  前端控制器
+ * 前端控制器
  * </p>
  *
  * @author mq_xu
@@ -16,5 +21,11 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @RequestMapping("/songList")
 public class SongListController {
+    @Resource
+    private SongListService songListService;
 
+    @GetMapping()
+    public List<SongList> getSongList() {
+        return songListService.getTopSongList();
+    }
 }

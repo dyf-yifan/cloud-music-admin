@@ -1,7 +1,9 @@
 package com.soft1851.music.admin.service;
 
-import com.soft1851.music.admin.entity.SongList;
 import com.baomidou.mybatisplus.extension.service.IService;
+import com.soft1851.music.admin.entity.SongList;
+
+import java.util.List;
 
 /**
  * <p>
@@ -12,5 +14,10 @@ import com.baomidou.mybatisplus.extension.service.IService;
  * @since 2020-04-22
  */
 public interface SongListService extends IService<SongList> {
-
+    /**
+     * 热门歌单
+     *
+     * @return
+     */
+    List<SongList> getTopSongList();
 }
