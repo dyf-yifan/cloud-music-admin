@@ -1,7 +1,7 @@
 package com.soft1851.music.admin.controller;
 
 import com.soft1851.music.admin.common.ResponseResult;
-import com.soft1851.music.admin.entity.UserDto;
+import com.soft1851.music.admin.domain.entity.UserDto;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.PostMapping;

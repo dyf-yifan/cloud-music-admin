@@ -2,7 +2,7 @@ package com.soft1851.music.admin.interceptor;
 
 import com.alibaba.fastjson.JSONArray;
 import com.soft1851.music.admin.common.ResultCode;
-import com.soft1851.music.admin.entity.SysRole;
+import com.soft1851.music.admin.domain.entity.SysRole;
 import com.soft1851.music.admin.exception.CustomException;
 import com.soft1851.music.admin.service.RedisService;
 import com.soft1851.music.admin.service.SysRoleService;

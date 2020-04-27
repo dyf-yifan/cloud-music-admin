@@ -1,7 +1,7 @@
 package com.soft1851.music.admin.controller;
 
 
-import com.soft1851.music.admin.entity.SongList;
+import com.soft1851.music.admin.domain.entity.SongList;
 import com.soft1851.music.admin.service.SongListService;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -24,8 +24,13 @@ public class SongListController {
     @Resource
     private SongListService songListService;
 
-    @GetMapping()
+    @GetMapping(value = "/all")
     public List<SongList> getSongList() {
         return songListService.getTopSongList();
+    }
+
+    @GetMapping(value = "/export")
+    public void export() {
+        songListService.exportData();
     }
 }

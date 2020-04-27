@@ -1,7 +1,7 @@
 package com.soft1851.music.admin.controller;
 
 
-import com.soft1851.music.admin.dto.LoginDto;
+import com.soft1851.music.admin.domain.dto.LoginDto;
 import com.soft1851.music.admin.service.SysAdminService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.PostMapping;
